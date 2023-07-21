@@ -8,17 +8,16 @@ html {
 *::before {
   box-sizing: inherit;
 }
-
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   background-image: url(../img/bg.jpg);
   background-repeat: no-repeat;
+
   @include tablet() {
     background-image: unset;
     background-color: $negro;
   }
 }
-
 a {
   color: $gris2;
   text-decoration: none;
@@ -26,31 +25,44 @@ a {
     text-decoration: underline;
   }
 }
-
+.upper {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
+}
 .contenedor {
   width: 90%;
 }
 .logotipo {
   margin-top: 0.5rem;
+  margin-left: 2rem;
   max-width: 13rem;
-}
 
-.formulario-login {
-  min-height: 625px;
-  max-width: 450px;
-  padding: 2rem 4rem;
-  margin: 1rem auto 4rem auto;
-  background-color: rgba(0, 0, 0, 0.564);
-
-  @include tablet() {
+  @include tablet {
+    margin-left: 1.5rem;
+  }
+  @include telefono {
+    height: auto;
+    width: 5rem;
   }
 }
-
+.formulario-login {
+  height: 645px;
+  width: 440px;
+  padding: 2rem 4rem;
+  margin: 1rem auto 5.6rem auto;
+  background-color: rgba(0, 0, 0, 0.564);
+  @include tablet() {
+    width: 100%;
+    padding: 0rem 1.3rem;
+    height: min-content;
+    padding-bottom: 2rem;
+  }
+}
 form {
   legend {
     color: $blanco;
     font-size: 2rem;
-    margin: 2rem 0;
+    margin: 1rem 0 2rem 0;
     font-weight: bold;
   }
   .campo {
@@ -105,10 +117,6 @@ form {
     }
   }
 }
-.upper {
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-}
 
 .acciones {
   margin-top: 1rem;
@@ -131,6 +139,10 @@ form {
   a {
     color: white;
   }
+
+  @include tablet {
+    margin-top: 2.2rem;
+  }
 }
 
 .footer-form {
@@ -139,38 +151,87 @@ form {
     font-size: 0.8rem;
 
     a {
-      color: aquamarine;
+      color: #0071eb;
     }
   }
 }
 
 .site-footer {
-
+  @include tablet() {
+    border-top: 1px solid #737373;
+  }
   display: flex;
   color: $gris2;
   padding-bottom: 4rem;
   background-color: rgba(0, 0, 0, 0.664);
-  justify-content: space-around;
+
   .contenedor {
-    padding: .3rem 2rem 3rem 1rem;
-    width: 70%;
-  
+    padding: 1rem 0;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+
     p {
-      font-size: 1.1rem;
+      font-size: 0.99rem;
+      padding-bottom: 0.5rem;
     }
     .menu-footer {
       display: flex;
       flex-wrap: wrap;
+      row-gap: 0.5rem;
       a {
         padding: 0.3rem;
-        font-size: 0.9rem;
-
+        font-size: 0.8rem;
         flex-basis: calc(100% / 4);
+        @include tablet() {
+          flex-basis: calc(100% / 3);
+        }
+        @include telefono() {
+          flex-basis: calc(100% / 2);
+        }
       }
     }
 
     .lenguaje {
+      position: relative;
+      display: flex;
+      width: 8rem;
+      height: 3rem;
       margin-top: 2rem;
+      background-color: #000;
+      background-image: none;
+      border: 1px solid #333;
+
+      padding: 1rem 0.2rem 1rem 4rem;
+      line-height: 1.7;
+
+      select {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding-bottom: 0.8rem;
+
+        padding-left: 3.2rem;
+        padding-right: 0.3rem;
+
+        padding-top: 0.8rem;
+        background-color: #000;
+        color: $gris2;
+        font-size: 0.8rem;
+        border: none;
+      }
+      img {
+        position: absolute;
+        width: 1.3rem;
+        height: auto;
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+
+        color: rgb(255, 255, 255);
+        top: 0;
+        left: 1rem;
+        z-index: 999;
+      }
     }
   }
 }

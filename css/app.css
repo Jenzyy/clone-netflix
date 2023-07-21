@@ -21,11 +21,16 @@ body {
 }
 
 a {
-  color: #8C8C8C;
+  color: #737373;
   text-decoration: none;
 }
 a:hover {
   text-decoration: underline;
+}
+
+.upper {
+  background-color: rgba(0, 0, 0, 0.6);
+  height: 100%;
 }
 
 .contenedor {
@@ -34,20 +39,41 @@ a:hover {
 
 .logotipo {
   margin-top: 0.5rem;
+  margin-left: 2rem;
   max-width: 13rem;
+}
+@media (max-width: 768px) {
+  .logotipo {
+    margin-left: 1.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .logotipo {
+    height: auto;
+    width: 5rem;
+  }
 }
 
 .formulario-login {
-  min-height: 625px;
-  max-width: 450px;
+  height: 645px;
+  width: 440px;
   padding: 2rem 4rem;
-  margin: 1rem auto 4rem auto;
+  margin: 1rem auto 5.6rem auto;
   background-color: rgba(0, 0, 0, 0.564);
 }
+@media (max-width: 768px) {
+  .formulario-login {
+    width: 100%;
+    padding: 0rem 1.3rem;
+    height: min-content;
+    padding-bottom: 2rem;
+  }
+}
+
 form legend {
   color: #FFFFFF;
   font-size: 2rem;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem 0;
   font-weight: bold;
 }
 form .campo {
@@ -72,7 +98,7 @@ form .campo input:focus + label {
 }
 form .campo label {
   font-size: 0.9rem;
-  color: #8C8C8C;
+  color: #737373;
   top: 1.1rem;
   left: 1rem;
   position: absolute;
@@ -98,11 +124,6 @@ form .submit input:hover {
   cursor: pointer;
 }
 
-.upper {
-  background-color: rgba(0, 0, 0, 0.6);
-  height: 100%;
-}
-
 .acciones {
   margin-top: 1rem;
   display: flex;
@@ -110,7 +131,7 @@ form .submit input:hover {
   font-size: 0.8rem;
 }
 .acciones .recuerdame label {
-  color: #8C8C8C;
+  color: #737373;
 }
 
 .contenido-inferior {
@@ -118,45 +139,101 @@ form .submit input:hover {
   margin-top: 4rem;
 }
 .contenido-inferior span {
-  color: #8C8C8C;
+  color: #737373;
 }
 .contenido-inferior a {
   color: white;
 }
+@media (max-width: 768px) {
+  .contenido-inferior {
+    margin-top: 2.2rem;
+  }
+}
 
 .footer-form p {
-  color: #8C8C8C;
+  color: #737373;
   font-size: 0.8rem;
 }
 .footer-form p a {
-  color: aquamarine;
+  color: #0071eb;
 }
 
 .site-footer {
   display: flex;
-  color: #8C8C8C;
+  color: #737373;
   padding-bottom: 4rem;
   background-color: rgba(0, 0, 0, 0.664);
-  justify-content: space-around;
+}
+@media (max-width: 768px) {
+  .site-footer {
+    border-top: 1px solid #737373;
+  }
 }
 .site-footer .contenedor {
-  padding: 0.3rem 2rem 3rem 1rem;
-  width: 70%;
+  padding: 1rem 0;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .site-footer .contenedor p {
-  font-size: 1.1rem;
+  font-size: 0.99rem;
+  padding-bottom: 0.5rem;
 }
 .site-footer .contenedor .menu-footer {
   display: flex;
   flex-wrap: wrap;
+  row-gap: 0.5rem;
 }
 .site-footer .contenedor .menu-footer a {
   padding: 0.3rem;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   flex-basis: 25%;
 }
+@media (max-width: 768px) {
+  .site-footer .contenedor .menu-footer a {
+    flex-basis: 33.3333333333%;
+  }
+}
+@media (max-width: 480px) {
+  .site-footer .contenedor .menu-footer a {
+    flex-basis: 50%;
+  }
+}
 .site-footer .contenedor .lenguaje {
+  position: relative;
+  display: flex;
+  width: 8rem;
+  height: 3rem;
   margin-top: 2rem;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #333;
+  padding: 1rem 0.2rem 1rem 4rem;
+  line-height: 1.7;
+}
+.site-footer .contenedor .lenguaje select {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-bottom: 0.8rem;
+  padding-left: 3.2rem;
+  padding-right: 0.3rem;
+  padding-top: 0.8rem;
+  background-color: #000;
+  color: #737373;
+  font-size: 0.8rem;
+  border: none;
+}
+.site-footer .contenedor .lenguaje img {
+  position: absolute;
+  width: 1.3rem;
+  height: auto;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  color: rgb(255, 255, 255);
+  top: 0;
+  left: 1rem;
+  z-index: 999;
 }
 
 /*# sourceMappingURL=app.css.map */
